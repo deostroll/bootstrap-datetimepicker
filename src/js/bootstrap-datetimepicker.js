@@ -2327,6 +2327,19 @@
             return picker;
         };
 
+        //new method for changing view
+        //in inline mode...
+        picker.showView = function(view) {
+          if (picker.options.inline) {
+            if (view === 'datepicker') {
+              //logic to show the datepicker
+            }
+            else if (view === 'timepicker') {
+              //logic to show the timepicker
+            }
+          }
+        }
+
         // initializing element and component attributes
         if (element.is('input')) {
             input = element;
