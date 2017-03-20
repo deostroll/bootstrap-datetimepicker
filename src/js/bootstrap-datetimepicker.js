@@ -1428,10 +1428,7 @@
                 if (!unset) {
                     setValue(date);
                 }
-            },
-            //variables for setInlineView
-            setInlineViewCache,
-            elems;
+            };
 
         /********************************************************************************
          *
@@ -2401,13 +2398,23 @@
         }
         if (options.inline) {
             show();
-            elems = $('li', widget);
-            setInlineViewCache = {
-                firstLi : elems.first(),
-                span: elems.first().next().find('span'),
-                lastLi : elems.last()
-            };
-            picker.setInlineView.cache = setInlineViewCache;
+            // elems = $('li', widget);
+            // setInlineViewCache = {
+            //     firstLi : elems.first(),
+            //     span: elems.first().next().find('span'),
+            //     lastLi : elems.last()
+            // };
+            picker.setInlineView.cache = (function () {
+                var elems = $('li', widget);
+                return {
+                    firstLi: elems.first(),
+                    span: elems.first().next().find('span'),
+                    lastLi : elems.last(),
+                    datepickerDivs: $('.datepicker div', widget),
+                    timepickerDics: $('.timepicker div', widget)
+                };
+            })();
+            //  = setInlineViewCache;
         }
         return picker;
     };
