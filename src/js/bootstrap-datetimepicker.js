@@ -2340,13 +2340,15 @@
                     //show the date picker
                     cache.firstLi.collapse('show');
                     cache.lastLi.collapse('hide');
-                    cache.datepickerDivs.hide().find('.datepicker-days').hide();
+                    cache.datepickerDivs.hide();
+                    $('.datepicker-days', cache.datepickerDivs).show();
                     cache.span.removeClass('glyphicon-calendar').addClass('glyphicon-time');
                 } else if (view === 'timepicker') {
                     //show the time picker
                     cache.firstLi.collapse('hide');
                     cache.lastLi.collapse('show');
-                    cache.timepickerDivs.hide().find('.timepicker-picker').show();
+                    cache.timepickerDivs.hide();
+                    $('.timepicker-picker', cache.timepickerDivs).show();
                     cache.span.removeClass('glyphicon-time').addClass('glyphicon-calendar');
                 }
             }
