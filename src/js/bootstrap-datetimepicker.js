@@ -2341,14 +2341,14 @@
                     cache.firstLi.collapse('show');
                     cache.lastLi.collapse('hide');
                     cache.datepickerDivs.hide();
-                    $('.datepicker-days', cache.datepickerDivs).show();
+                    cache.datepicker.show();
                     cache.span.removeClass('glyphicon-calendar').addClass('glyphicon-time');
                 } else if (view === 'timepicker') {
                     //show the time picker
                     cache.firstLi.collapse('hide');
                     cache.lastLi.collapse('show');
                     cache.timepickerDivs.hide();
-                    $('.timepicker-picker', cache.timepickerDivs).show();
+                    cache.timepicker.show();
                     cache.span.removeClass('glyphicon-time').addClass('glyphicon-calendar');
                 }
             }
@@ -2416,7 +2416,9 @@
                     span: elems.first().next().find('span'),
                     lastLi : elems.last(),
                     datepickerDivs: $('.datepicker div', widget),
-                    timepickerDivs: $('.timepicker div', widget)
+                    timepickerDivs: $('.timepicker div', widget),
+                    datepicker: $('.datepicker-days', widget),
+                    timepicker: $('.timepicker-picker', widget)
                 };
             })();
             //  = setInlineViewCache;
