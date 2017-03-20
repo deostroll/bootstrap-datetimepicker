@@ -2335,6 +2335,7 @@
         picker.setInlineView = function (view) {
             if (picker.options().inline) {
                 var cache = picker.setInlineView.cache;
+                console.log(cache);
                 if (view === 'datepicker') {
                     //show the date picker
                     cache.firstLi.collapse('show');
