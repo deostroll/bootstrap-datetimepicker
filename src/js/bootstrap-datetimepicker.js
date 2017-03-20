@@ -2333,14 +2333,13 @@
          * @returns {picker instance}
          */
         picker.setInlineView = function (view) {
-            
             if (picker.options().inline) {
                 var cache = picker.setInlineView.cache;
-                console.log(cache);
+                // console.log(cache);
 
-                // TODO: add logic for showing the 
-                // hour, month, decade, minutes, etc 
-                // pickers
+                //TODO: add logic for showing the
+                //hour, month, decade, minutes, etc
+                //pickers
                 if (view === 'datepicker') {
                     //show the date picker
                     cache.firstLi.collapse('show');
