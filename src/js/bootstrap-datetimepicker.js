@@ -2333,8 +2333,10 @@
          * @returns {picker instance}
          */
         picker.setInlineView = function (view) {
-            if (picker.options().inline) {
-                var cache = picker.setInlineView.cache;
+            var opts = picker.options(),
+                cache;
+            if (opts.inline && !opts.sideBySide) {
+                cache = picker.setInlineView.cache;
                 // console.log(cache);
 
                 //TODO: add logic for showing the
