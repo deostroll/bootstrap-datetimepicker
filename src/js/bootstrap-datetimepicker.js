@@ -2348,13 +2348,13 @@
 
                 if (view === 'datepicker') {
                     //show the date picker
-                    cache.firstLi.collapse('show').once('shown.bs.collapse', done);
+                    cache.firstLi.collapse('show').one('shown.bs.collapse', done);
                     cache.lastLi.collapse('hide');
                     cache.span.removeClass('glyphicon-calendar').addClass('glyphicon-time');
                 } else if (view === 'timepicker') {
                     //show the time picker
                     cache.firstLi.collapse('hide');
-                    cache.lastLi.collapse('show').once('shown.bs.collapse', done);
+                    cache.lastLi.collapse('show').one('shown.bs.collapse', done);
                     cache.span.removeClass('glyphicon-time').addClass('glyphicon-calendar');
                 }
             }
