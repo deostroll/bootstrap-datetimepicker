@@ -2348,7 +2348,7 @@
 
                 if (view === 'datepicker') {
                     //show the date picker
-                    if (cache.firstLi.is('.in')) {
+                    if (!cache.firstLi.is('.in')) {
                       cache.firstLi.collapse('show').one('shown.bs.collapse', done);
                       cache.lastLi.collapse('hide');
                       cache.span.removeClass('glyphicon-calendar').addClass('glyphicon-time');
