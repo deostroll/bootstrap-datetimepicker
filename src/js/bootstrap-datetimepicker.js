@@ -2335,18 +2335,26 @@
          * @param {Takes string, 'datepicker', 'timepicker'} newDate
          * @returns {picker instance}
          */
-        picker.setInlineView = function (view) {
+        picker.setInlineView = function (view, cb) {
             if (picker.options().inline) {
-                var cache = picker.setInlineView.cache;
+                var cache = picker.setInlineView.cache,
+                  done = null;
+
+                done = function () {
+                  if (cb) {
+                    cb();
+                  }
+                };
+
                 if (view === 'datepicker') {
                     //show the date picker
-                    cache.firstLi.collapse('show');
+                    cache.firstLi.collapse('show').once('shown.bs.collapse', done);
                     cache.lastLi.collapse('hide');
                     cache.span.removeClass('glyphicon-calendar').addClass('glyphicon-time');
                 } else if (view === 'timepicker') {
                     //show the time picker
                     cache.firstLi.collapse('hide');
-                    cache.lastLi.collapse('show');
+                    cache.lastLi.collapse('show').once('shown.bs.collapse', done);
                     cache.span.removeClass('glyphicon-time').addClass('glyphicon-calendar');
                 }
             }
